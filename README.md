@@ -1,7 +1,6 @@
 # docker-data-versioning
 Prototype of the infrastructure for data versioning
 
-# Quick demo
 Clone repository 
 ```
 git clone https://github.com/iiasa/docker-geodata-versioning.git
