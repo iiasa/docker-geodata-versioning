@@ -1,0 +1,30 @@
+version: '2'
+services:
+
+  postgis:
+    image: iiasapostgis
+    build: ./postgis/
+    environment: 
+      - PGDATA=/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data_volumes/pgdata_data:/var/lib/postgresql/data
+
+  geoserver:
+    image: iiasageoserver
+    build: .
+    environment:
+      - POSTGRES_DB_HOST=postgis
+      - GEOGIG_USERNAME=${GEOGIG_USERNAME}
+      - GEOGIG_EMAIL_ADDRESS=${GEOGIG_EMAIL_ADDRESS}
+    links:
+      - postgis
+    ports:
+      - "8080:8080"
+    volumes: 
+      - ./config.sh:/tmp/config.sh
+      - ./wait-for-postgres.sh:/tmp/wait-for-postgres.sh
+      - ./data_volumes/geoserver_data:/opt/geoserver/data_dir
+    command: sh -c "/tmp/config.sh && /opt/geoserver/bin/startup.sh"
+
