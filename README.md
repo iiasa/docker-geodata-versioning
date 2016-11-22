@@ -3,8 +3,8 @@ Prototype of the infrastructure for data versioning
 
 ### Set GeoGig user and email as environment variables or directly in `docker-compose.yml`
 ``` 
-export GEOGIG_USERNAME=vwmaus
-export GEOGIG_EMAIL_ADDRESS=maus@iiasa.ca.at
+export GEOGIG_USERNAME=<user_name>
+export GEOGIG_EMAIL_ADDRESS=<user_email>
 ``` 
 
 ### Build the images 
