@@ -7,20 +7,24 @@ This Prototype uses Docker containers to provide geodata versioning tools.
   Before starting your containers make sure you have installed [Docker](https://www.docker.com/products/docker#) and [Docker Compose](https://docs.docker.com/compose/install/).
 
   1. Clone git repository 
+  
     ```
       git clone https://github.com/iiasa/docker-geodata-versioning.git
       cd docker-geodata-versioning
     ```
   2. Edit GeoGig user and email in the compose file `docker-compose.yml` or export them as environment variables, such that,
+  
     ```
       export GEOGIG_USERNAME=<user_name>
       export GEOGIG_EMAIL_ADDRESS=<user_email>
     ```
   3. Build docker images
+  
     ``` 
       make build
     ``` 
   4. Run containers
+  
     ``` 
       make up
     ``` 
