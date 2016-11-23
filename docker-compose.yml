@@ -16,6 +16,8 @@ services:
     build: .
     environment:
       - POSTGRES_DB_HOST=postgis
+      - POSTGRES_DB_USERNAME=postgres
+      - POSTGRES_DB_PASSWORD=postgres
       - GEOGIG_USERNAME=${GEOGIG_USERNAME}
       - GEOGIG_EMAIL_ADDRESS=${GEOGIG_EMAIL_ADDRESS}
     links:
